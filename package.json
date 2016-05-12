@@ -1,0 +1,28 @@
+{
+  "name": "ExampleCfxRnThird",
+  "version": "0.0.0",
+  "private": true,
+  "watch": {
+    "build": {
+      "patterns": "src",
+      "extensions": "coffee"
+    }
+  },
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "clean": "rm -rf build",
+    "build": "coffee -bo build src",
+    "rebuild": "npm run clean; coffee -bo build src",
+    "watch": "npm run clean; npm-watch"
+  },
+  "_dependencies": {
+    "cfx.rn": "../cfx.rn"
+  },
+  "dependencies": {
+    "cfx.rn": "git+https://github.com/react-cfx/cfx.rn.git",
+    "coffee-script": "^1.10.0"
+  },
+  "devDependencies": {
+    "npm-watch": "^0.1.4"
+  }
+}
