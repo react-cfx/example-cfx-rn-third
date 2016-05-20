@@ -17,7 +17,7 @@ SecondPageComponent = cfx
         age: 23
     @
 
-  _pressButton: ->
+  pressButton: ->
     { navigator } = @props
 
     if @props.getUser
@@ -41,7 +41,7 @@ SecondPageComponent = cfx
       , 'SecondPageComponent'
     ,
       TouchableOpacity
-        onPress: @_pressButton.bind @
+        onPress: @pressButton.bind @
       ,
         Text {}
         , '返回'

@@ -1,5 +1,5 @@
 { Comp } = require 'cfx.rn'
 App = require './App/index'
 
-Comp.reg 'ExampleCfxRnInit'
+Comp.reg 'ExampleCfxRnThird'
 , -> App
