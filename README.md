@@ -1,1 +1,1 @@
-# CFX Sample CFX-RN Example
+# CFX-RN third components Example

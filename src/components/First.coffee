@@ -8,8 +8,9 @@
   TouchableOpacity
 } = Comps
 
-SecondComponent = require '../components/Second'
 Navigation = require '../Navigation/index'
+Components =
+  Second: require '../components/Second'
 
 module.exports = cfx
 
@@ -19,16 +20,17 @@ module.exports = cfx
       user: null
     @
 
-  _pressButton: ->
+  pressButton: ->
     { navigator } = @props
 
     if navigator
 
       navigator.push(
-        Navigation.Second.apply @, [
-          @state
-          SecondComponent
-        ]
+        Navigation.getRouter @
+        , 'Second'
+        , Components
+        , Navigation.Routers
+        , @state
       )
 
   render: ->
@@ -50,7 +52,7 @@ module.exports = cfx
         , 'FirstComponent'
       ,
         TouchableOpacity
-          onPress: @_pressButton.bind @
+          onPress: @pressButton.bind @
         ,
           Text {}
           , "点我查询用户 id = #{@state.id}"

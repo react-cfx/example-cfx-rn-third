@@ -1,3 +1,4 @@
+echo = -> console.log arguments
 { assign } = Object
 {
   RN
@@ -7,11 +8,15 @@
 { Navigator } = Comps
 
 Navigation = require '../Navigation/index'
-FirstComponent = require '../components/First'
+Components =
+  First: require '../components/First'
 
 module.exports = cfx (props, state) ->
 
-  Navigator Navigation.First.apply @, [
-    state
-    FirstComponent
-  ]
+  Navigator Navigation.Config(
+    Navigation.getRouter @
+    , 'First'
+    , Components
+    , Navigation.Routers
+    , state
+  )
